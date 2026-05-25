@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Влад Еремин | Управляющий на рынке акций</title>
+
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109411696', 'ym');
+
+        ym(109411696, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/109411696" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,7 +28,7 @@
             --text-muted: #475569;
             --accent: #059669;
             --accent-hover: #047857;
-            --accent-two: #0d9488; /* Другой оттенок для второй методички */
+            --accent-two: #0d9488;
             --accent-two-hover: #0f766e;
             --border: #e2e8f0;
             --max-width: 1100px;
@@ -63,7 +75,7 @@
 
         .logo {
             font-weight: 700;
-            font-size: 0.95rem; /* Слегка уменьшен, чтобы длинное название стояло красиво в ряд */
+            font-size: 0.95rem;
             letter-spacing: -0.3px;
             text-transform: uppercase;
             white-space: nowrap;
@@ -71,7 +83,7 @@
 
         .logo span {
             color: var(--accent);
-            font-weight: 700; /* Такой же жирный шрифт, как и первая часть */
+            font-weight: 700;
         }
 
         nav a {
@@ -87,7 +99,6 @@
             color: var(--accent);
         }
 
-        /* Общие стили для секций */
         section {
             padding: 100px 0 60px 0;
         }
@@ -116,7 +127,6 @@
             z-index: -1;
         }
 
-        /* Кнопки */
         .btn {
             display: inline-block;
             background-color: var(--accent);
@@ -210,7 +220,6 @@
             letter-spacing: -1px;
         }
 
-        /* Красивое оформление текста построчно */
         .hero-features {
             margin-bottom: 35px;
         }
@@ -316,7 +325,7 @@
             filter: drop-shadow(0 25px 45px rgba(15, 23, 42, 0.18));
         }
 
-        /* Интервью и публикации */
+        /* Карточки интервью */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -476,10 +485,9 @@
             margin-bottom: 20px;
         }
 
-        /* Контейнер для плашек в одну строку */
         .badges-row {
             display: flex;
-            flex-wrap: nowrap; /* Запрещаем перенос, чтобы они всегда были на одной строке */
+            flex-wrap: nowrap;
             gap: 8px;
             align-items: center;
             margin-bottom: 8px;
@@ -493,13 +501,12 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            white-space: nowrap; /* Защита текста от переноса внутри плашки */
+            white-space: nowrap;
         }
 
         .badge-bcs { background-color: #00529b; color: #ffffff; }
         .badge-tbank { background-color: #ffdd2d; color: #0f172a; }
         
-        /* Светло-зеленая промо-плашка в фирменном стиле сайта */
         .badge-promo { 
             background-color: #ecfdf5; 
             color: #047857; 
@@ -579,7 +586,7 @@
         .btn-tbank-primary { background-color: #ffdd2d; color: #0f172a; }
         .btn-tbank-primary:hover { background-color: #e6c525; }
 
-        /* РАЗДЕЛ МЕТОДИЧКИ */
+        /* Раздел Методички */
         .section-products-wrapper {
             width: 100vw;
             position: relative;
@@ -641,7 +648,6 @@
             font-weight: 700;
         }
 
-        /* Полноэкранная карусель */
         .product-carousel-fullscreen {
             position: relative;
             width: 100%;
@@ -828,7 +834,23 @@
         .lightbox-close { position: absolute; top: -50px; right: 0; color: #ffffff; font-size: 2.5rem; background: none; border: none; cursor: pointer; line-height: 1; }
         body.lightbox-open { overflow: hidden; }
 
-        /* Адаптивность */
+        /* Футер */
+        footer {
+            margin-top: 80px;
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .disclaimer {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            line-height: 1.5;
+        }
+
         @media (max-width: 900px) {
             .hero { flex-direction: column-reverse; text-align: center; padding-top: 120px; gap: 40px; }
             .hero-photo img { width: 100%; max-width: 340px; height: 340px; }
@@ -848,7 +870,7 @@
             nav { display: none; }
             .social-grid { flex-direction: column; gap: 10px; }
             .social-link { width: 100%; justify-content: center; }
-            .badges-row { flex-wrap: wrap; } /* На смартфонах разрешаем аккуратный перенос, если экран слишком узкий */
+            .badges-row { flex-wrap: wrap; }
         }
     </style>
 </head>
@@ -1122,7 +1144,7 @@
     </div>
 
     <script>
-        /* ЛОГИКА МНОЖЕСТВЕННЫХ КАРУСЕЛЕЙ */
+        /* Логика каруселей */
         document.querySelectorAll('.carousel-instance').forEach(instance => {
             const track = instance.querySelector('.carousel-track-container');
             const slides = Array.from(instance.querySelectorAll('.carousel-slide'));
@@ -1132,7 +1154,6 @@
             
             let currentIndex = 0;
 
-            // Создаем точки
             slides.forEach((_, i) => {
                 const dot = document.createElement('button');
                 dot.classList.add('carousel-indicator');
@@ -1164,7 +1185,7 @@
             });
         });
 
-        /* LIGHTBOX */
+        /* Lightbox */
         const overlay = document.getElementById('lightboxOverlay');
         const lightboxImg = document.getElementById('lightboxImg');
 
